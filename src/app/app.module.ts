@@ -8,6 +8,8 @@ import {RouterModule} from '@angular/router';
 import {routes} from './app.routes';
 import { AdvertentieFormComponent } from './components/advertentie-form/advertentie-form.component';
 import {AdvertentiePlaatsenComponent} from './pages/advertentieplaatsen/advertentie.plaatsen.pagina';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {AdvertentiePlaatsenComponent} from './pages/advertentieplaatsen/adverten
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

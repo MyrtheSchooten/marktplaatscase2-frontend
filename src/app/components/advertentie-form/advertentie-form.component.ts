@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ProductadvertentieService} from '../../services/productadvertentie.service';
 
 @Component({
   selector: 'app-advertentie-form',
   templateUrl: './advertentie-form.component.html',
   styleUrls: ['./advertentie-form.component.css']
 })
-export class AdvertentieFormComponent implements OnInit {
+export class AdvertentieFormComponent {
 
-  constructor() { }
+  addAdvertentiesForm: FormGroup;
 
-  ngOnInit(): void {
+  constructor(
+    private fb: FormBuilder,
+    private productAdvertentieService: ProductadvertentieService) {
+    this.addAdvertentiesForm = this.fb.group({
+      titel: ['', [Validators.required, Validators.pattern('^[a-zA-Z -]+$')]],
+      prijs: ['', [Validators.required, Validators.pattern('[0-9]+$')]]
+    });
   }
 
+  addAdvertentie(): void {
+    this.productAdvertentieService.add(this.addAdvertentiesForm.value);
+    this.addAdvertentiesForm.reset();
+  }
 }

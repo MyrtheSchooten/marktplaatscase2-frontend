@@ -3,13 +3,13 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  border: 1px solid #10de96;
-  background-color: #f4f0f0;
+  border: 1px solid #FF6EC7;
+  background-color: black;
 }
 
 li {
   float: left;
-  border-right: 1px solid #10de96;
+  border-right: 1px solid #FF6EC7;
 }
 
 li:last-child {
@@ -18,7 +18,7 @@ li:last-child {
 
 li a, li #today {
   display: block;
-  color: #090303;
+  color: #ffff00;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -26,11 +26,11 @@ li a, li #today {
 }
 
 li a:hover:not(.active) {
-  background-color: #10de96;
-  color: black;
+  background-color: #FF6EC7;
+  color: #ffff00;
 }
 
 li .activeMenu {
-  color: #10de96;;
-  background-color: black;
+  color: #FF6EC7;;
+  background-color: #ffff00;
 }

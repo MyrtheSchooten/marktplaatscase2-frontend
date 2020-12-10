@@ -1,1 +1,21 @@
-<p>advertentie-form works!</p>
+<h2> Voeg hier uw advertentie toe </h2>
+<form (submit)="addAdvertentie()" [formGroup]="addAdvertentiesForm" novalidate id="reactive-form">
+  <div>
+    <label for="rfm-titel">Titel:</label>
+    <input type="text" id="rfm-titel" formControlName="titel" placeholder="titel">
+    <span *ngIf="addAdvertentiesForm.get('titel')?.touched && addAdvertentiesForm.get('titel')?.invalid">*</span>
+    <span *ngIf="addAdvertentiesForm.get('titel')?.touched && addAdvertentiesForm.get('titel')?.errors?.required">Vul een in titel in aub</span>
+  </div>
+  <div>
+    <label for="rfm-prijs">Prijs: </label>
+    <input type="number" id="rfm-prijs" formControlName="prijs" placeholder="prijs">
+    <span *ngIf="addAdvertentiesForm.get('prijs')?.touched && addAdvertentiesForm.get('prijs')?.invalid">*</span>
+    <span *ngIf="addAdvertentiesForm.get('prijs')?.touched && addAdvertentiesForm.get('prijs')?.errors?.required">Vul een in prijs in aub</span>
+    <span *ngIf="addAdvertentiesForm.get('firstname')?.touched && addAdvertentiesForm.get('firstname')?.errors?.pattern">Alleen cijfers graag</span>
+  </div>
+  <div>
+    <label for="rfm-titel">Omschrijving:</label>
+    <input type="text" id="rfm-omschrijving" formControlName="omschrijving" placeholder="omschrijving">
+  </div>
+  <button [disabled]="addAdvertentiesForm.invalid">Voeg advertentie toe.</button>
+</form>
