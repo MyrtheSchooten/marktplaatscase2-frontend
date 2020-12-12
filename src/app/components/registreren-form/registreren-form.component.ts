@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ProductadvertentieService} from '../../services/productadvertentie.service';
-import {GebruikerService} from '../../services/gebruiker.service';
+import {ProductAdvertentieService} from '../../services/ProductAdvertentieService';
+import {GebruikerService} from '../../services/GebruikerService';
 
 @Component({
   selector: 'app-registreren-form',

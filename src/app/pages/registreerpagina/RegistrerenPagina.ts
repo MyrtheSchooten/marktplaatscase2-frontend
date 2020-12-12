@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  templateUrl: 'registreren.pagina.html'
+  templateUrl: 'RegistrerenPagina.html'
 })
 export class RegistrerenComponent {
 

@@ -1,8 +1,8 @@
 import { Route } from '@angular/router';
-import {StartPaginaComponent} from './pages/startpagina/start.pagina';
-import {AdvertentiePlaatsenComponent} from './pages/advertentieplaatsen/advertentie.plaatsen.pagina';
-import {RegistrerenComponent} from './pages/registreerpagina/registreren.pagina';
-import {InloggenComponent} from './pages/inloggenpagina/inloggen.pagina';
+import {StartPaginaComponent} from './pages/startpagina/StartPagina';
+import {AdvertentiePlaatsenComponent} from './pages/advertentieplaatsen/AdvertentiePlaatsenPagina';
+import {RegistrerenComponent} from './pages/registreerpagina/RegistrerenPagina';
+import {InloggenComponent} from './pages/inloggenpagina/InloggenPagina';
 
 
 export const routes: Route[] = [

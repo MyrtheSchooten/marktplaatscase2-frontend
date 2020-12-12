@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ProductadvertentieService} from '../../services/productadvertentie.service';
+import {ProductAdvertentieService} from '../../services/ProductAdvertentieService';
 
 @Component({
   selector: 'app-advertentie-form',
@@ -13,7 +13,7 @@ export class AdvertentieFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private productAdvertentieService: ProductadvertentieService) {
+    private productAdvertentieService: ProductAdvertentieService) {
     this.addAdvertentiesForm = this.fb.group({
       titel: ['', [Validators.required]],
       prijs: ['', [Validators.required, Validators.pattern('[0-9]+$')]],

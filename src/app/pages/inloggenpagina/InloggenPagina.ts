@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  templateUrl: 'inloggen.pagina.html'
+  templateUrl: 'InloggenPagina.html'
 })
 export class InloggenComponent {
 

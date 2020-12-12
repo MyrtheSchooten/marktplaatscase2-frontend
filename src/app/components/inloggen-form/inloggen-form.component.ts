@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {GebruikerService} from '../../services/gebruiker.service';
+import {Gebruiker} from '../../models/Gebruiker';
+import {GebruikerService} from '../../services/GebruikerService';
 
 @Component({
   selector: 'app-inloggen-form',
@@ -9,6 +10,8 @@ import {GebruikerService} from '../../services/gebruiker.service';
 })
 export class InloggenFormComponent {
   inloggenGebruikerForm: FormGroup;
+  ingelogdeGebruiker = {} as Gebruiker;
+  message$ = this.gebruikerService.message$;
 
   constructor(
     private fb: FormBuilder,
@@ -19,6 +22,8 @@ export class InloggenFormComponent {
     });
   }
 
-  getIngelogdeGebruiker(): void {
+  login(): void {
+    this.gebruikerService.login(this.ingelogdeGebruiker);
+    this.ingelogdeGebruiker = {} as Gebruiker;
   }
 }

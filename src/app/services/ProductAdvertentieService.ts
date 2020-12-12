@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {ProductAdvertentie} from '../models/product-advertentie';
+import {ProductAdvertentie} from '../models/ProductAdvertentie';
 import {Observable, Subject} from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class ProductadvertentieService {
+export class ProductAdvertentieService {
 
   private url = 'http://localhost:9080/marktplaats_war_exploded/resources/productadvertenties/';
 

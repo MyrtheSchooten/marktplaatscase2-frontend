@@ -1,17 +1,18 @@
 import {Observable, Subject} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Gebruiker} from '../models/gebruiker';
+import {Gebruiker} from '../models/Gebruiker';
 
 @Injectable({ providedIn: 'root' })
 export class GebruikerService {
 
   private url = 'http://localhost:9080/marktplaats_war_exploded/resources/gebruikers/';
+  private ingelogdeGebruiker = {} as Gebruiker;
+  message$ = new Subject<string>();
 
   constructor(private http: HttpClient) {
   }
-  // tslint:disable-next-line:variable-name
-  _ingelogdeGebruiker = new Subject<Gebruiker>();
+
   // tslint:disable-next-line:variable-name
   _gebruikersUpdated$ = new Subject<Gebruiker[]>();
 
@@ -27,11 +28,18 @@ export class GebruikerService {
     return this.gebruikersUpdated$;
   }
 
-/*  getIngelogdeGebruiker(gebruikersname: string)
-
-
   add(g: Gebruiker): void {
     this.http.post<Gebruiker[]>(this.url, g)
       .subscribe(() => this.getAll());
-  }*/
+  }
+
+  login(g: Gebruiker): void {
+    this.http.post<Gebruiker>(this.url + '/login', g)
+      .subscribe(
+        data => {
+          this.ingelogdeGebruiker = data;
+          this.message$.next('Gebruiker' + data.gebruikersnaam + ' is ingelogd.');
+        }
+      );
+  }
 }
