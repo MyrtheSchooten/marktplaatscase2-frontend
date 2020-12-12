@@ -15,8 +15,9 @@ export class AdvertentieFormComponent {
     private fb: FormBuilder,
     private productAdvertentieService: ProductadvertentieService) {
     this.addAdvertentiesForm = this.fb.group({
-      titel: ['', [Validators.required, Validators.pattern('^[a-zA-Z -]+$')]],
-      prijs: ['', [Validators.required, Validators.pattern('[0-9]+$')]]
+      titel: ['', [Validators.required]],
+      prijs: ['', [Validators.required, Validators.pattern('[0-9]+$')]],
+      omschrijving: ['']
     });
   }
 

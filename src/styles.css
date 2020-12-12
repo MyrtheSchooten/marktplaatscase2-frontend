@@ -1,8 +1,8 @@
 
 body {
   font-family: sans-serif;
-  background-color: black;
-  color: aliceblue;
+  background-color: floralwhite;
+  color: black;
 }
 
 h1 {
@@ -43,7 +43,7 @@ td {
 button {
   position: center;
   text-align: center;
-  background: black;
+  background: floralwhite;
   color: #15f4ee;
   font-family: poppins, serif;
   font-weight: 400;
@@ -66,7 +66,7 @@ input {
   border-radius: 5px;
   transition: 0.2s ease all;
   outline: none;
-  background-color:black;
+  background-color: floralwhite;
   color: #FF6EC7;
 }
 td a:first-child {

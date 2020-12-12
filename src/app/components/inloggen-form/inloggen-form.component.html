@@ -1,0 +1,14 @@
+<h2>Log hier in</h2>
+<form (submit)="getIngelogdeGebruiker()" [formGroup]="inloggenGebruikerForm" novalidate id="reactive-form">
+  <div>
+    <input type="text" id="rfm-gebruikersnaam" formControlName="gebruikersnaam" placeholder="gebruikersnaam">
+    <span *ngIf="inloggenGebruikerForm.get('titel')?.touched && inloggenGebruikerForm.get('titel')?.invalid">*</span>
+    <span *ngIf="inloggenGebruikerForm.get('titel')?.touched && inloggenGebruikerForm.get('titel')?.errors?.required">Vul een gebruikersnaam in aub</span>
+  </div>
+  <div>
+    <input type="password" id="rfm-wachtwoord" formControlName="wachtwoord" placeholder="wachtwoord">
+    <span *ngIf="inloggenGebruikerForm.get('prijs')?.touched && inloggenGebruikerForm.get('prijs')?.invalid">*</span>
+    <span *ngIf="inloggenGebruikerForm.get('prijs')?.touched && inloggenGebruikerForm.get('prijs')?.errors?.required">Vul een in wachtwoord in aub</span>
+  </div>
+    <button [disabled]="inloggenGebruikerForm.invalid">Log in</button>
+</form>

@@ -11,7 +11,7 @@
     <input type="number" id="rfm-prijs" formControlName="prijs" placeholder="prijs">
     <span *ngIf="addAdvertentiesForm.get('prijs')?.touched && addAdvertentiesForm.get('prijs')?.invalid">*</span>
     <span *ngIf="addAdvertentiesForm.get('prijs')?.touched && addAdvertentiesForm.get('prijs')?.errors?.required">Vul een in prijs in aub</span>
-    <span *ngIf="addAdvertentiesForm.get('firstname')?.touched && addAdvertentiesForm.get('firstname')?.errors?.pattern">Alleen cijfers graag</span>
+    <span *ngIf="addAdvertentiesForm.get('prijs')?.touched && addAdvertentiesForm.get('prijs')?.errors?.pattern">Alleen cijfers graag</span>
   </div>
   <div>
     <label for="rfm-titel">Omschrijving:</label>

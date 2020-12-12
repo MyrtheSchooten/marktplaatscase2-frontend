@@ -10,13 +10,18 @@ import { AdvertentieFormComponent } from './components/advertentie-form/adverten
 import {AdvertentiePlaatsenComponent} from './pages/advertentieplaatsen/advertentie.plaatsen.pagina';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RegistrerenComponent} from './pages/registreerpagina/registreren.pagina';
+import { RegistrerenFormComponent } from './components/registreren-form/registreren-form.component';
+import { InloggenFormComponent } from './components/inloggen-form/inloggen-form.component';
+import {InloggenComponent} from './pages/inloggenpagina/inloggen.pagina';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartPaginaComponent,
-    AdvertentieFormComponent,
-    AdvertentiePlaatsenComponent
+    AdvertentiePlaatsenComponent, AdvertentieFormComponent,
+    RegistrerenComponent, RegistrerenFormComponent,
+    InloggenComponent, InloggenFormComponent
   ],
   imports: [
     BrowserModule,
