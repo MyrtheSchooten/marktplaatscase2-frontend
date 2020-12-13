@@ -1,4 +1,11 @@
-<h2> Voeg hier uw advertentie toe </h2>
+<h3> Wat voor advertentie wilt u toevoegen? </h3>
+
+
+<div *ngFor="let soort of soortAdvertentie">
+  <input type="radio" name="soortAdvertentie" value="{{soort}}" (change)="radioChangeHandler($event)"><i>{{soort}}</i>
+</div>
+
+
 <form (submit)="addAdvertentie()" [formGroup]="addAdvertentiesForm" novalidate id="reactive-form">
   <div>
     <label for="rfm-titel">Titel:</label>

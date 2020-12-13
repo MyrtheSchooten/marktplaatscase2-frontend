@@ -12,23 +12,23 @@ export class ProductAdvertentieService {
   }
 
   // tslint:disable-next-line:variable-name
-  _advertentiesUpdated$ = new Subject<ProductAdvertentie[]>();
+  _pAdvertentiesUpdated$ = new Subject<ProductAdvertentie[]>();
 
-  get advertentiesUpdated$(): Subject<ProductAdvertentie[]> {
-    return this._advertentiesUpdated$;
+  get pAdvertentiesUpdated$(): Subject<ProductAdvertentie[]> {
+    return this._pAdvertentiesUpdated$;
   }
 
   getAll(): Observable<ProductAdvertentie[]> {
     this.http.get<ProductAdvertentie[]>(this.url)
       .subscribe(
-        contacts => this.advertentiesUpdated$.next(contacts)
+        contacts => this.pAdvertentiesUpdated$.next(contacts)
       );
-    return this.advertentiesUpdated$;
+    return this.pAdvertentiesUpdated$;
   }
 
 
-  add(a: ProductAdvertentie): void {
-    this.http.post<ProductAdvertentie[]>(this.url, a)
+  add(p: ProductAdvertentie): void {
+    this.http.post<ProductAdvertentie[]>(this.url, p)
       .subscribe(() => this.getAll());
   }
 }

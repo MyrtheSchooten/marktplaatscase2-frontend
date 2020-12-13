@@ -2,16 +2,16 @@
 
 <form (submit)="addGebruiker()" [formGroup]="addGebruikerForm" novalidate id="reactive-form">
   <div>
-    <label for="rfm-gebruikersnaam">Gebruikersnaam:</label>
+    <i class="fa fa-user" aria-hidden="true"></i>
     <input type="text" id="rfm-gebruikersnaam" formControlName="gebruikersnaam" placeholder="gebruikersnaam">
-    <span *ngIf="addGebruikerForm.get('titel')?.touched && addGebruikerForm.get('titel')?.invalid">*</span>
-    <span *ngIf="addGebruikerForm.get('titel')?.touched && addGebruikerForm.get('titel')?.errors?.required">Vul een gebruikersnaam in aub</span>
+    <span *ngIf="addGebruikerForm.get('gebruikersnaam')?.touched && addGebruikerForm.get('gebruikersnaam')?.invalid">*</span>
+    <span *ngIf="addGebruikerForm.get('gebruikersnaam')?.touched && addGebruikerForm.get('gebruikersnaam')?.errors?.required">Vul een gebruikersnaam in aub</span>
   </div>
   <div>
-    <label for="rfm-wachtwoord">Wachtwoord: </label>
+    <i class="fa fa-lock" aria-hidden="true"></i>
     <input type="password" id="rfm-wachtwoord" formControlName="wachtwoord" placeholder="wachtwoord">
-    <span *ngIf="addGebruikerForm.get('prijs')?.touched && addGebruikerForm.get('prijs')?.invalid">*</span>
-    <span *ngIf="addGebruikerForm.get('prijs')?.touched && addGebruikerForm.get('prijs')?.errors?.required">Vul een in wachtwoord in aub</span>
+    <span *ngIf="addGebruikerForm.get('wachtwoord')?.touched && addGebruikerForm.get('wachtwoord')?.invalid">*</span>
+    <span *ngIf="addGebruikerForm.get('wachtwoord')?.touched && addGebruikerForm.get('wachtwoord')?.errors?.required">Vul een in wachtwoord in aub</span>
   </div>
   <button [disabled]="addGebruikerForm.invalid">Maak een account aan.</button>
 </form>

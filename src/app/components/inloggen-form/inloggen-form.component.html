@@ -1,27 +1,19 @@
-<h2>Log hier in</h2>
-<form (submit)="login()" [formGroup]="inloggenGebruikerForm" novalidate id="reactive-form">
-  <div>
-    <input type="text" id="rfm-gebruikersnaam" formControlName="gebruikersnaam" placeholder="gebruikersnaam">
-    <span *ngIf="inloggenGebruikerForm.get('titel')?.touched && inloggenGebruikerForm.get('titel')?.invalid">*</span>
-    <span *ngIf="inloggenGebruikerForm.get('titel')?.touched && inloggenGebruikerForm.get('titel')?.errors?.required">Vul een gebruikersnaam in aub</span>
-  </div>
-  <div>
-    <input type="password" id="rfm-wachtwoord" formControlName="wachtwoord" placeholder="wachtwoord">
-    <span *ngIf="inloggenGebruikerForm.get('prijs')?.touched && inloggenGebruikerForm.get('prijs')?.invalid">*</span>
-    <span *ngIf="inloggenGebruikerForm.get('prijs')?.touched && inloggenGebruikerForm.get('prijs')?.errors?.required">Vul een in wachtwoord in aub</span>
-  </div>
-  <button [disabled]="inloggenGebruikerForm.invalid">log in</button>
-</form>
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Log in form</title>
-    <link rel="stylesheet" href="inloggen-form.component.css">
-  </head>
-
-  <body>
-
-  </body>
-
-</html>
+<div class="login-box">
+  <h1>Log in</h1>
+  <form (submit)="login()" [formGroup]="inloggenGebruikerForm" novalidate id="reactive-form">
+    <div class="textbox">
+      <i class="fa fa-user" aria-hidden="true"></i>
+      <input type="text" id="rfm-gebruikersnaam" formControlName="gebruikersnaam" placeholder="gebruikersnaam">
+      <span *ngIf="inloggenGebruikerForm.get('gebruikersnaam')?.touched && inloggenGebruikerForm.get('gebruikersnaam')?.invalid">*</span>
+      <span *ngIf="inloggenGebruikerForm.get('gebruikersnaam')?.touched && inloggenGebruikerForm.get('gebruikersnaam')?.errors?.required">Vul een gebruikersnaam in</span>
+    </div>
+    <div class="textbox">
+      <i class="fa fa-lock" aria-hidden="true"></i>
+      <input type="password" id="rfm-wachtwoord" formControlName="wachtwoord" placeholder="wachtwoord">
+      <span *ngIf="inloggenGebruikerForm.get('wachtwoord')?.touched && inloggenGebruikerForm.get('wachtwoord')?.invalid">*</span>
+      <span *ngIf="inloggenGebruikerForm.get('wachtwoord')?.touched && inloggenGebruikerForm.get('wachtwoord')?.errors?.required">Vul een in wachtwoord in</span>
+    </div>
+    <button [disabled]="inloggenGebruikerForm.invalid">log in</button>
+  </form>
+</div>
