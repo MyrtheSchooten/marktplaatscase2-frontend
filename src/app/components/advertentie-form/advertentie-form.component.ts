@@ -23,8 +23,8 @@ export class AdvertentieFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private productAdvertentieService: ProductAdvertentieService,
-    /*private dienstAdvertentieService: DienstAdvertentieService*/) {
+    private productAdvertentieService: ProductAdvertentieService/*,
+    private dienstAdvertentieService: DienstAdvertentieService*/) {
     this.addAdvertentiesForm = this.fb.group({
       titel: ['', [Validators.required]],
       prijs: ['', [Validators.required, Validators.pattern('[0-9]+$')]],
@@ -36,7 +36,7 @@ export class AdvertentieFormComponent {
     if (this.soort === 'Product') {
       this.productAdvertentieService.add(this.addAdvertentiesForm.value);
     } else {
-     /* this.dienstAdvertentieService.add(this.addAdvertentiesForm.value);*/
+      /*this.dienstAdvertentieService.add(this.addAdvertentiesForm.value);*/
     }
     this.addAdvertentiesForm.reset();
   }

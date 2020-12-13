@@ -1,1 +1,25 @@
-<p>producten-overzicht works!</p>
+<table>
+  <thead>
+  <tr>
+    <th>Titel</th>
+    <th>Prijs</th>
+    <th>Omschrijving</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of producten$ | async">
+    <td>
+      <div>{{product.titel}}</div>
+    </td>
+    <td>
+      <div>{{product.prijs}}</div>
+    </td>
+    <td>
+      <div>{{product.omschrijving}}</div>
+    </td>
+    <td>
+      <button (click)="toevoegenWinkelmandje(product)">Voeg toe aan winkelmandje</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
