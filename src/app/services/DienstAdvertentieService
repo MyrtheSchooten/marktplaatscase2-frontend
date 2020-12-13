@@ -2,12 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import {DienstAdvertentie} from '../models/DienstAdvertentie';
+import {ProductAdvertentie} from '../models/ProductAdvertentie';
 
-
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class DienstAdvertentieService {
 
-  private url = 'http://localhost:9080/marktplaats_war_exploded/resources/dienstadvertenties/';
+  private url = 'http://localhost:9080/marktplaats_war_exploded/resources/dienstadvertenties';
 
   constructor(private http: HttpClient) {
   }
@@ -19,7 +19,7 @@ export class DienstAdvertentieService {
     return this._dAdvertentiesUpdated$;
   }
 
-  getAll(): Observable<DienstAdvertentie[]> {
+  getAll(): Observable<ProductAdvertentie[]> {
     this.http.get<DienstAdvertentie[]>(this.url)
       .subscribe(
         contacts => this.dAdvertentiesUpdated$.next(contacts)
@@ -27,9 +27,9 @@ export class DienstAdvertentieService {
     return this.dAdvertentiesUpdated$;
   }
 
-
   add(d: DienstAdvertentie): void {
-    this.http.post<DienstAdvertentie[]>(this.url, d)
+    this.http.post<ProductAdvertentie[]>(this.url, d)
       .subscribe(() => this.getAll());
   }
+
 }

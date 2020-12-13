@@ -14,6 +14,9 @@ import {RegistrerenComponent} from './pages/registreerpagina/RegistrerenPagina';
 import { RegistrerenFormComponent } from './components/registreren-form/registreren-form.component';
 import { InloggenFormComponent } from './components/inloggen-form/inloggen-form.component';
 import {InloggenComponent} from './pages/inloggenpagina/InloggenPagina';
+import { AdvertentieOverzichtComponentComponent } from './components/product-overzicht/advertentie-overzicht-component.component';
+import { DienstenOverzichtComponent } from './components/diensten-overzicht/diensten-overzicht.component';
+import { ProductenOverzichtComponent } from './components/producten-overzicht/producten-overzicht.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,7 @@ import {InloggenComponent} from './pages/inloggenpagina/InloggenPagina';
     StartPaginaComponent,
     AdvertentiePlaatsenComponent, AdvertentieFormComponent,
     RegistrerenComponent, RegistrerenFormComponent,
-    InloggenComponent, InloggenFormComponent
+    InloggenComponent, InloggenFormComponent, AdvertentieOverzichtComponentComponent, DienstenOverzichtComponent, ProductenOverzichtComponent
   ],
   imports: [
     BrowserModule,

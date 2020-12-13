@@ -1,5 +1,4 @@
-export interface DienstAdvertentie{
-  id?: number;
+export interface DienstAdvertentie {
   titel: string;
   prijs: number;
   omschrijving: string;
