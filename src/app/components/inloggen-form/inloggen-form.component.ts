@@ -23,7 +23,6 @@ export class InloggenFormComponent {
   }
 
   login(): void {
-    this.gebruikerService.login(this.ingelogdeGebruiker);
-    this.ingelogdeGebruiker = {} as Gebruiker;
+    this.gebruikerService.login(this.inloggenGebruikerForm.value);
   }
 }

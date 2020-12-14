@@ -1,8 +1,9 @@
 <h3> Wat voor advertentie wilt u toevoegen? </h3>
 
 
-<div *ngFor="let soort of soortAdvertentie">
-  <input type="radio" name="soortAdvertentie" value="{{soort}}" (change)="radioChangeHandler($event)"><i>{{soort}}</i>
+<div class="radiogroup" *ngFor="let soort of soortAdvertentie">
+  <input class="radio-input" type="radio" name="soortAdvertentie" value="{{soort}}" (change)="radioChangeHandler($event)">
+  <label class="radio-label">{{soort}}</label>
 </div>
 
 

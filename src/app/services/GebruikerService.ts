@@ -7,7 +7,8 @@ import {Gebruiker} from '../models/Gebruiker';
 export class GebruikerService {
 
   private url = 'http://localhost:9080/marktplaats_war_exploded/resources/gebruikers/';
-  private ingelogdeGebruiker = {} as Gebruiker;
+  ingelogdeGebruiker = {} as Gebruiker;
+  ingelogdeGebruikerNaam = new Subject<string>();
   message$ = new Subject<string>();
 
   constructor(private http: HttpClient) {
@@ -34,11 +35,16 @@ export class GebruikerService {
   }
 
   login(g: Gebruiker): void {
-    this.http.post<Gebruiker>(this.url + '/login', g)
+    this.http.post<Gebruiker>(this.url + 'login', g)
       .subscribe(
         data => {
           this.ingelogdeGebruiker = data;
+          this.ingelogdeGebruikerNaam.next(this.ingelogdeGebruiker.gebruikersnaam);
           this.message$.next('Gebruiker' + data.gebruikersnaam + ' is ingelogd.');
+        },
+        error => {
+          console.log(error);
+          this.message$.next('Inloggen is mislukt. Reden: ' + error.statusText + '.');
         }
       );
   }

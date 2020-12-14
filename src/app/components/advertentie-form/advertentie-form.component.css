@@ -1,1 +1,43 @@
+/*body{
+  margin: 20px;
+}
 
+.radio{
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 5px white;
+}
+
+.radio-input{
+  display: none;
+}
+
+.radio-label{
+  padding: 8px 14px;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: white;
+  background: tomato;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.radio-label:not(:last-of-type){
+  border-right: 1px solid tomato;
+}*/
+
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #333;
+}
+
+.radiogroup{
+  font-size: medium;
+  color: darkslategray;
+}

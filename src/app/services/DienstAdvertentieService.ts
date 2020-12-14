@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import {DienstAdvertentie} from '../models/DienstAdvertentie';
-import {ProductAdvertentie} from '../models/ProductAdvertentie';
 
 @Injectable({providedIn: 'root'})
 export class DienstAdvertentieService {
@@ -19,7 +18,7 @@ export class DienstAdvertentieService {
     return this._dAdvertentiesUpdated$;
   }
 
-  getAll(): Observable<ProductAdvertentie[]> {
+  getAll(): Observable<DienstAdvertentie[]> {
     this.http.get<DienstAdvertentie[]>(this.url)
       .subscribe(
         contacts => this.dAdvertentiesUpdated$.next(contacts)
@@ -28,7 +27,7 @@ export class DienstAdvertentieService {
   }
 
   add(d: DienstAdvertentie): void {
-    this.http.post<ProductAdvertentie[]>(this.url, d)
+    this.http.post<DienstAdvertentie[]>(this.url, d)
       .subscribe(() => this.getAll());
   }
 

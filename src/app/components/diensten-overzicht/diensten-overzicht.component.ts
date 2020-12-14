@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-/*import {DienstAdvertentieService} from '../../services/DienstAdvertentieService';*/
+import { Component } from '@angular/core';
+import {DienstAdvertentieService} from '../../services/DienstAdvertentieService';
+import {DienstAdvertentie} from '../../models/DienstAdvertentie';
+
 
 @Component({
   selector: 'app-diensten-overzicht',
@@ -8,14 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DienstenOverzichtComponent{
 
-/* diensten$ = this.service.dAdvertentiesUpdated$;*/
+ diensten$ = this.service.dAdvertentiesUpdated$;
 
-  constructor(/*private service: DienstAdvertentieService*/) {
-    /*this.service.getAll();*/
+  constructor(private service: DienstAdvertentieService) {
+    this.service.getAll();
   }
 
   // tslint:disable-next-line:typedef
-  toevoegenWinkelmandje(/*dienst: DienstAdvertentieService*/) {
+  toevoegenWinkelmandje(dienst: DienstAdvertentie) {
   }
 
 }
