@@ -44,8 +44,13 @@ export class AdvertentieService {
     return this.eigenAdsUpdates$;
   }
 
-  add(p: Advertentie): void {
-    this.http.post<Advertentie[]>(this.url, p)
+  add(a: Advertentie): void {
+    this.http.post<Advertentie[]>(this.url, a)
+      .subscribe(() => this.getAll());
+  }
+
+  delete(a: Advertentie): void {
+    this.http.delete(`${this.url}/${a.id}`)
       .subscribe(() => this.getAll());
   }
 }

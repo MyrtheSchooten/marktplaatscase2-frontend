@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AdvertentieService} from '../../services/AdvertentieService';
 import {GebruikerService} from '../../services/GebruikerService';
+import {Advertentie} from '../../models/Advertentie';
 
 @Component({
   selector: 'app-eigen-advertenties',
@@ -16,6 +17,10 @@ export class EigenAdsComponent {
     private gebruikerService: GebruikerService,
     private adService: AdvertentieService) {
     this.adService.getAllByGebruikerId(this.id);
+  }
+
+  verwijder(a: Advertentie): void{
+      this.adService.delete(a);
   }
 
 }
