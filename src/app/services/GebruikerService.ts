@@ -40,7 +40,9 @@ export class GebruikerService {
         data => {
           this.ingelogdeGebruiker = data;
           this.ingelogdeGebruikerNaam.next(this.ingelogdeGebruiker.gebruikersnaam);
+          console.log('Gebruiker' + this.ingelogdeGebruiker.gebruikersnaam + ' is ingelogd.');
           this.message$.next('Gebruiker' + data.gebruikersnaam + ' is ingelogd.');
+          localStorage.setItem('SessionUser', '1');
         },
         error => {
           console.log(error);

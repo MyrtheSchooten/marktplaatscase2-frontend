@@ -3,10 +3,10 @@
 <nav>
   <ul>
     <li><a routerLink="/start">Start</a></li>
-    <li><a routerLink="/registreren">Registreer</a></li>
-    <li><a routerLink="/inloggen">Log in</a> </li>
-    <li><a routerLink="/advertentieplaatsen">Plaats een advertentie</a></li>
-    <li><a routerLink="/advertentieoverzicht">Aangeboden advertenties</a></li>
+    <li *ngIf="!isActivated()"><a routerLink="/registreren">Registreer</a></li>
+    <li *ngIf="!isActivated()"><a routerLink="/inloggen">Log in</a></li>
+    <li *ngIf="isActivated()"><a routerLink="/advertentieplaatsen">Plaats een advertentie</a></li>
+    <li *ngIf="isActivated()"><a routerLink="/advertentieoverzicht">Aangeboden advertenties</a></li>
   </ul>
 </nav>
 

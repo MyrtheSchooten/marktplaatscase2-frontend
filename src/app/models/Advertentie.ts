@@ -1,8 +1,9 @@
 import {Gebruiker} from './Gebruiker';
 
-export interface DienstAdvertentie {
+export interface Advertentie {
+  id?: number;
   titel: string;
   prijs: number;
   omschrijving: string;
-/*  eigenaar: Gebruiker;*/
+  eigenaar: Gebruiker;
 }

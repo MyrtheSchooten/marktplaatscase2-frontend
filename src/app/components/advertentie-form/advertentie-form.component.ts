@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ProductAdvertentieService} from '../../services/ProductAdvertentieService';
-import {DienstAdvertentieService} from '../../services/DienstAdvertentieService';
+import {AdvertentieService} from '../../services/AdvertentieService';
 import {GebruikerService} from '../../services/GebruikerService';
+import {Advertentie} from '../../models/Advertentie';
 
 
 @Component({
@@ -19,13 +19,11 @@ export class AdvertentieFormComponent {
     'Dienst',
     'Product'
   ];
-  private advertentie: any;
 
   constructor(
     private fb: FormBuilder,
     private gebruikerService: GebruikerService,
-    private productAdvertentieService: ProductAdvertentieService,
-    private dienstAdvertentieService: DienstAdvertentieService) {
+    private advertentieService: AdvertentieService) {
     this.addAdvertentiesForm = this.fb.group({
       titel: ['', [Validators.required]],
       prijs: ['', [Validators.required, Validators.pattern('[0-9]+$')]],
@@ -34,13 +32,10 @@ export class AdvertentieFormComponent {
   }
 
   addAdvertentie(): void {
-    this.advertentie = this.addAdvertentiesForm.value;
-/*    this.advertentie.eigenaar = this.gebruikerService.ingelogdeGebruiker;*/
-    if (this.soort === 'Product') {
-      this.productAdvertentieService.add(this.advertentie);
-    } else {
-      this.dienstAdvertentieService.add(this.advertentie);
-    }
+
+    const a: Advertentie = this.addAdvertentiesForm.value;
+    a.eigenaar = this.gebruikerService.ingelogdeGebruiker;
+    this.advertentieService.add(a);
     this.addAdvertentiesForm.reset();
   }
 
