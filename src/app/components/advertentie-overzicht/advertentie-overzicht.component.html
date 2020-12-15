@@ -3,7 +3,9 @@
   <tr>
     <th>Titel</th>
     <th>Prijs</th>
+    <th>Soort Advertentie</th>
     <th>Omschrijving</th>
+    <th>Aanbieder</th>
   </tr>
   </thead>
   <tbody>
@@ -15,7 +17,13 @@
       <div>{{product.prijs}}</div>
     </td>
     <td>
+      <div>{{product.soortAdvertentie}}</div>
+    </td>
+    <td>
       <div>{{product.omschrijving}}</div>
+    </td>
+    <td>
+      <div>{{product.eigenaar.gebruikersnaam}}</div>
     </td>
     <td>
       <button (click)="toevoegenWinkelmandje(product)">Voeg toe aan winkelmandje</button>

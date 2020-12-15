@@ -1,1 +1,4 @@
-<app-inloggen-form></app-inloggen-form>
+
+<div *ngIf="!isActivated()">
+  <app-inloggen-form></app-inloggen-form>
+</div>

@@ -17,7 +17,9 @@ import {AdvertentieOverzichtComponent} from './components/advertentie-overzicht/
 import {OverzichtComponent} from './pages/overzichtpagina/OverzichtPagina';
 import {AuthguardService} from './services/authguard.service';
 import {AuthenticationGuard} from './authentication.guard';
-/*import { AdZoekenComponent } from './components/ad-zoeken/ad-zoeken.component';*/
+import {EigenAdvertentiesComponent} from './pages/eigenadvertenties/EigenAdvertentiesPagina';
+import {EigenAdsComponent} from './components/eigen-advertenties/eigen-ads.component';
+
 
 // @ts-ignore
 const routes: Routes = [
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path: 'start', component: StartPaginaComponent},
   {path: 'registreren', component: RegistrerenComponent},
   {path: 'advertentieplaatsen', component: AdvertentiePlaatsenComponent, canActivate: [AuthenticationGuard]},
-  {path: 'advertentieoverzicht', component: OverzichtComponent, canActivate: [AuthenticationGuard]}
+  {path: 'advertentieoverzicht', component: OverzichtComponent, canActivate: [AuthenticationGuard]},
+  {path: 'eigenadvertenties', component: EigenAdvertentiesComponent, canActivate: [AuthenticationGuard]}
   ];
 
 
@@ -40,6 +43,7 @@ const routes: Routes = [
     InloggenComponent, InloggenFormComponent,
     AdvertentieOverzichtComponent,
     OverzichtComponent,
+    EigenAdsComponent, EigenAdvertentiesComponent,
     /*AdZoekenComponent*/
   ],
   imports: [

@@ -1,12 +1,15 @@
 <h1>Marktplaats</h1>
+<h3 *ngIf="isActivated()">Welkom, u bent ingelogd!</h3>
 
 <nav>
   <ul>
     <li><a routerLink="/start">Start</a></li>
     <li *ngIf="!isActivated()"><a routerLink="/registreren">Registreer</a></li>
-    <li *ngIf="!isActivated()"><a routerLink="/inloggen">Log in</a></li>
+    <li><a routerLink="/inloggen" *ngIf="!isActivated()">Log in</a></li>
+    <li><a routerLink="/inloggen" *ngIf="isActivated()" (click)="logUit()">Log uit</a></li>
     <li *ngIf="isActivated()"><a routerLink="/advertentieplaatsen">Plaats een advertentie</a></li>
     <li *ngIf="isActivated()"><a routerLink="/advertentieoverzicht">Aangeboden advertenties</a></li>
+    <li *ngIf="isActivated()"><a routerLink="/eigenadvertenties">Eigen advertenties</a></li>
   </ul>
 </nav>
 

@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {AuthguardService} from './services/authguard.service';
+import {GebruikerService} from './services/GebruikerService';
+import {empty} from 'rxjs/internal/Observer';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,18 @@ import {AuthguardService} from './services/authguard.service';
 export class AppComponent {
   title = 'marktplaats-frontend';
 
-  constructor(private authguard: AuthguardService) {
+  constructor(
+    private authguard: AuthguardService,
+    private gebruikerService: GebruikerService) {
   }
 
-  isActivated(): void {
+  message$ = this.gebruikerService.message$;
+
+  isActivated(): boolean {
     return this.authguard.gettoken();
+  }
+
+  logUit(): void{
+    localStorage.clear();
   }
 }

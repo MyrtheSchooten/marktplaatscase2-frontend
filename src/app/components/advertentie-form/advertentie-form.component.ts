@@ -32,8 +32,12 @@ export class AdvertentieFormComponent {
   }
 
   addAdvertentie(): void {
-
     const a: Advertentie = this.addAdvertentiesForm.value;
+    if (this.soort === 'Product'){
+      a.soortAdvertentie = 'Product';
+    } else {
+      a.soortAdvertentie = 'Dienst';
+    }
     a.eigenaar = this.gebruikerService.ingelogdeGebruiker;
     this.advertentieService.add(a);
     this.addAdvertentiesForm.reset();

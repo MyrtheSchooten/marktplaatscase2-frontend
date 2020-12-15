@@ -6,4 +6,5 @@ export interface Advertentie {
   prijs: number;
   omschrijving: string;
   eigenaar: Gebruiker;
+  soortAdvertentie: string;
 }

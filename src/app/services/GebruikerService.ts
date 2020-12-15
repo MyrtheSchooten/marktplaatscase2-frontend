@@ -2,6 +2,7 @@ import {Observable, Subject} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Gebruiker} from '../models/Gebruiker';
+import {Router} from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class GebruikerService {
@@ -11,7 +12,9 @@ export class GebruikerService {
   ingelogdeGebruikerNaam = new Subject<string>();
   message$ = new Subject<string>();
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private router: Router) {
   }
 
   // tslint:disable-next-line:variable-name
@@ -29,6 +32,8 @@ export class GebruikerService {
     return this.gebruikersUpdated$;
   }
 
+
+
   add(g: Gebruiker): void {
     this.http.post<Gebruiker[]>(this.url, g)
       .subscribe(() => this.getAll());
@@ -41,8 +46,9 @@ export class GebruikerService {
           this.ingelogdeGebruiker = data;
           this.ingelogdeGebruikerNaam.next(this.ingelogdeGebruiker.gebruikersnaam);
           console.log('Gebruiker' + this.ingelogdeGebruiker.gebruikersnaam + ' is ingelogd.');
-          this.message$.next('Gebruiker' + data.gebruikersnaam + ' is ingelogd.');
+          this.message$.next('Welkom ' + data.gebruikersnaam + '!');
           localStorage.setItem('SessionUser', '1');
+          this.router.navigate(['/start']);
         },
         error => {
           console.log(error);
@@ -51,3 +57,4 @@ export class GebruikerService {
       );
   }
 }
+

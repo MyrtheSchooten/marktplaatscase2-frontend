@@ -1,0 +1,28 @@
+<table>
+  <thead>
+  <tr>
+    <th>Titel</th>
+    <th>Prijs</th>
+    <th>Soort Advertentie</th>
+    <th>Omschrijving</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let advertentie of eigenProducten$ | async">
+    <td>
+      <div>{{advertentie.titel}}</div>
+    </td>
+    <td>
+      <div>{{advertentie.prijs}}</div>
+    </td>
+    <td>
+      <div>{{advertentie.soortAdvertentie}}</div>
+    </td>
+    <td>
+      <div>{{advertentie.omschrijving}}</div>
+    </td>
+    <td>
+    </td>
+  </tr>
+  </tbody>
+</table>
