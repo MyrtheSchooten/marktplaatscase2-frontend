@@ -1,7 +1,7 @@
 import {Gebruiker} from './Gebruiker';
 
 export interface Advertentie {
-  id?: number;
+  id: string;
   titel: string;
   prijs: number;
   omschrijving: string;

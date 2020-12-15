@@ -49,8 +49,8 @@ export class AdvertentieService {
       .subscribe(() => this.getAll());
   }
 
-  delete(a: Advertentie): void {
-    this.http.delete(`${this.url}/${a.id}`)
+  delete(adId: string): void {
+    this.http.delete(this.url + adId)
       .subscribe(() => this.getAll());
   }
 }

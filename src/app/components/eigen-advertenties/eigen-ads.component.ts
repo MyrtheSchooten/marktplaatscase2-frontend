@@ -20,7 +20,7 @@ export class EigenAdsComponent {
   }
 
   verwijder(a: Advertentie): void{
-      this.adService.delete(a);
+      this.adService.delete(a.id);
   }
 
 }
