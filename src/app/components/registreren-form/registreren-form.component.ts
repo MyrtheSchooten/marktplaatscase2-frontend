@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {GebruikerService} from '../../services/GebruikerService';
+import {GebruikerService} from '../../services/gebruiker.service';
 
 @Component({
   selector: 'app-registreren-form',
@@ -10,6 +10,7 @@ import {GebruikerService} from '../../services/GebruikerService';
 export class RegistrerenFormComponent {
 
   addGebruikerForm: FormGroup;
+  checkbox = document.getElementById('voorwaarden');
 
   constructor(
     private fb: FormBuilder,
@@ -24,5 +25,4 @@ export class RegistrerenFormComponent {
     this.gebruikerService.add(this.addGebruikerForm.value);
     this.addGebruikerForm.reset();
   }
-
 }

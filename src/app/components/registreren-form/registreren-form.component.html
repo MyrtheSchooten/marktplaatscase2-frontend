@@ -13,5 +13,8 @@
     <span *ngIf="addGebruikerForm.get('wachtwoord')?.touched && addGebruikerForm.get('wachtwoord')?.invalid">*</span>
     <span *ngIf="addGebruikerForm.get('wachtwoord')?.touched && addGebruikerForm.get('wachtwoord')?.errors?.required">Vul een in wachtwoord in aub</span>
   </div>
+  <div>
+    Door een account aan te maken geef je aan akkoord te zijn met de algemene voorwaarden.
+  </div>
   <button [disabled]="addGebruikerForm.invalid">Maak een account aan.</button>
 </form>

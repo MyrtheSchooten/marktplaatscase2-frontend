@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Gebruiker} from '../../models/Gebruiker';
-import {GebruikerService} from '../../services/GebruikerService';
+import {Gebruiker} from '../../models/gebruiker';
+import {GebruikerService} from '../../services/gebruiker.service';
 
 @Component({
   selector: 'app-inloggen-form',

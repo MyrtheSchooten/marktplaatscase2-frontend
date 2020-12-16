@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Advertentie} from '../models/Advertentie';
+import {Advertentie} from '../models/advertentie';
 import {Observable, Subject} from 'rxjs';
-import {GebruikerService} from './GebruikerService';
+import {GebruikerService} from './gebruiker.service';
 
 @Injectable({ providedIn: 'root' })
 export class AdvertentieService {

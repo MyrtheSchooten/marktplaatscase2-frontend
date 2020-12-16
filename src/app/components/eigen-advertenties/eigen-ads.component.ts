@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AdvertentieService} from '../../services/AdvertentieService';
-import {GebruikerService} from '../../services/GebruikerService';
-import {Advertentie} from '../../models/Advertentie';
+import {AdvertentieService} from '../../services/advertentie.service';
+import {GebruikerService} from '../../services/gebruiker.service';
+import {Advertentie} from '../../models/advertentie';
 
 @Component({
   selector: 'app-eigen-advertenties',

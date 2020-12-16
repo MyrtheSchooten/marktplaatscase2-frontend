@@ -1,4 +1,4 @@
-import {Gebruiker} from './Gebruiker';
+import {Gebruiker} from './gebruiker';
 
 export interface Advertentie {
   id: string;

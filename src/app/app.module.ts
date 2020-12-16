@@ -3,21 +3,21 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {StartPaginaComponent} from './pages/startpagina/StartPagina';
+import {StartPaginaComponent} from './pages/start.pagina/start.pagina';
 import {RouterModule, Routes} from '@angular/router';
 import {AdvertentieFormComponent} from './components/advertentie-form/advertentie-form.component';
-import {AdvertentiePlaatsenComponent} from './pages/advertentieplaatsenpagina/AdvertentiePlaatsenPagina';
+import {AdvertentiePlaatsenComponent} from './pages/advertentie-plaatsen.pagina/advertentie-plaatsen.pagina';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RegistrerenComponent} from './pages/registreerpagina/RegistrerenPagina';
+import {RegistrerenComponent} from './pages/registeer.pagina/registreren.pagina';
 import {RegistrerenFormComponent} from './components/registreren-form/registreren-form.component';
 import {InloggenFormComponent} from './components/inloggen-form/inloggen-form.component';
-import {InloggenComponent} from './pages/inloggenpagina/InloggenPagina';
+import {InloggenComponent} from './pages/inloggen.pagina/inloggen.pagina';
 import {AdvertentieOverzichtComponent} from './components/advertentie-overzicht/advertentie-overzicht.component';
-import {OverzichtComponent} from './pages/overzichtpagina/OverzichtPagina';
+import {OverzichtComponent} from './pages/overzicht.pagina/overzicht.pagina';
 import {AuthguardService} from './services/authguard.service';
 import {AuthenticationGuard} from './authentication.guard';
-import {EigenAdvertentiesComponent} from './pages/eigenadvertenties/EigenAdvertentiesPagina';
+import {EigenAdvertentiesComponent} from './pages/eigen-advertenties.pagina/eigen-advertenties.pagina';
 import {EigenAdsComponent} from './components/eigen-advertenties/eigen-ads.component';
 
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  templateUrl: 'OverzichtPagina.html'
+  templateUrl: 'overzicht.pagina.html'
 })
 export class OverzichtComponent {
 

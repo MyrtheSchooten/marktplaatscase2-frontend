@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-import {AdvertentieService} from '../../services/AdvertentieService';
-import {Advertentie} from '../../models/Advertentie';
+import {AdvertentieService} from '../../services/advertentie.service';
+import {Advertentie} from '../../models/advertentie';
 
 @Component({
   selector: 'app-advertentie-overzicht',

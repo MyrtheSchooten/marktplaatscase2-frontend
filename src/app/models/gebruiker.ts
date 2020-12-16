@@ -1,4 +1,4 @@
-import {Advertentie} from './Advertentie';
+import {Advertentie} from './advertentie';
 
 export interface Gebruiker{
   id: string;

@@ -3,7 +3,7 @@ import {AuthguardService} from '../../services/authguard.service';
 
 
 @Component({
-  templateUrl: 'InloggenPagina.html'
+  templateUrl: 'inloggen.pagina.html'
 })
 export class InloggenComponent {
 

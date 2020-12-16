@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  templateUrl: 'EigenAdvertentiesPagina.html'
+  templateUrl: 'eigen-advertenties.pagina.html'
 })
 export class EigenAdvertentiesComponent {
 
